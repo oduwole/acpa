@@ -1,0 +1,979 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<style type="text/css">
+    .gallery {
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+        .gallery img {
+            margin-left: 2%;
+            margin-bottom: 2%;
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+    img {
+        max-width: 180px;
+    }
+
+    .checkbox {
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        background-color: #eee;
+    }
+
+    .chkbox {
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        background-color: #eee;
+    }
+
+    .checkbox:hover {
+        background-color: #ccc;
+    }
+
+    .input-group-addon {
+        background-color: #2184be !important;
+        color: #fff !important;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .premium {
+        /* background-color:#d9534f;*/
+    }
+
+    .minHeight {
+        min-height: 1150px;
+    }
+
+    .wizard .content {
+        /*min-height: 1150px;*/
+    }
+
+        .wizard .content > .body {
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            /*position: relative;*/
+        }
+
+    .panel {
+        min-height: 550px;
+    }
+
+    .panel-green {
+        border-color: #5cb85c;
+    }
+
+        .panel-green > .panel-heading {
+            border-color: #5cb85c;
+            color: white;
+            background-color: #5cb85c;
+        }
+
+        .panel-green > a {
+            color: #5cb85c;
+        }
+
+            .panel-green > a:hover {
+                color: #3d8b3d;
+            }
+
+    .panel-red {
+        border-color: #d9534f;
+    }
+
+        .panel-red > .panel-heading {
+            border-color: #d9534f;
+            color: white;
+            background-color: #d9534f;
+        }
+
+        .panel-red > a {
+            color: #d9534f;
+        }
+
+            .panel-red > a:hover {
+                color: #b52b27;
+            }
+
+    .panel-yellow {
+        border-color: #f0ad4e;
+    }
+
+        .panel-yellow > .panel-heading {
+            border-color: #f0ad4e;
+            color: white;
+            background-color: #f0ad4e;
+        }
+
+        .panel-yellow > a {
+            color: #f0ad4e;
+        }
+
+            .panel-yellow > a:hover {
+                color: #df8a13;
+            }
+
+    .panel-blue {
+        border-color: #0775ed;
+    }
+
+        .panel-blue > .panel-heading {
+            border-color: #0775ed;
+            color: white;
+            background-color: #0775ed;
+        }
+
+        .panel-blue > a {
+            color: #0775ed;
+        }
+
+    .panel-green > a:hover {
+        color: #2184be;
+    }
+</style>
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+<div class="page">
+    <section class="content">
+        <form id="example-form" action="#">
+            <div>
+
+                <h3>Select Product</h3>
+                <section>
+                    <div class="row">
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="fa fa-5x icon-all-risk"></i>-->
+                                <span class="icon-all-risk"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <!--<img class="card-img-top" src="~/images/agric.jpg" alt="Card image cap" />-->
+                                <div class="card-body">
+                                    <h5 class="card-title">All Risk</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="allrisk" value="allrisk" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-burg"></i>-->
+                                <span class="icon-burg"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <!--<img class="card-img-top" src="~/images/burglary.jpg" style="width:286px; height:120px;" alt="Burglary" />-->
+                                <div class="card-body">
+                                    <h5 class="card-title">Burglary</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="burglary" value="burglary" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-death"></i>-->
+                                <span class="icon-death"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Death</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="death" value="death" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-electronic-equipment"></i>-->
+                                <span class="icon-electronic-equipment"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Elect. Equip.</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="electequip" value="electequip" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-fiedlity-guarantee"></i>-->
+                                <span class="icon-fiedlity-guarantee"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fidelity Guar.</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="fidelity" value="fidelity" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-fire-and-special-perils"></i>-->
+                                <span class="icon-fire-and-special-perils"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Fire & SP</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="fire" value="fire" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-goods-in-transit"></i>-->
+                                <span class="icon-goods-in-transit"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">GIT</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="git" value="git" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-group-personal"></i>-->
+                                <span class="icon-group-personal"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Group Personal Acc.</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="gpa" value="gpa" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-home-insurance"></i>-->
+                                <span class="icon-home-insurance"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Home</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="home" value="home" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-machinery"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Machinery Brakedown</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="machinery" value="machinery" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-marine-cargo"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Marine Cargo</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="marinecargo" value="marinecargo" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <!--<i class="icon-marine-hull"></i>-->
+                                <span class="icon-marine-hull"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Marine Hull</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="marinehull" value="marinehull" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-material-damage"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Material Damage</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="material" value="material" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-motor" style="font-size:80px;"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Motor</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="motor" value="Motor" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-motor-inspection" style="font-size:80px;"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Motor Inspection</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="motorinsp" value="motorinsp" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-personal-accident"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Personal Accident</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="personalAcc" value="personalAcc" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-plant-all-risk"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Plant All Risk</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="plantAR" value="plantAR" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-professional-idemnity"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Professional Indemnity</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="profInd" value="profInd" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-xs-2">
+                            <div class="card" style="width: 10rem;">
+                                <span class="icon-public-liability"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                <div class="card-body">
+                                    <h5 class="card-title">Public Liability</h5>
+                                    <p class="card-text"></p>
+                                    <input type="radio" name="radios[]" id="pubLiab" value="pubLiab" class="checkbox" />
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <h3>Loss Information</h3>
+                <section>
+                    <div class="panel panel-blue">
+                        <!--<div class="panel-heading">Client Details</div>-->
+                        <div class="panel-body">
+                            <div class="row allrisk">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Insured</span>
+                                    <input name="insured" placeholder="Insured"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Policy No</span>
+                                    <input name="policyno" placeholder="Policy No"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Date of Loss</span>
+                                    <input name="lossdate" type="date" placeholder="1/1/2020"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">State</span>
+                                    <input name="lossState" placeholder="State where loss occured"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Loss Details</span>
+                                    <textarea name="lossDetails" placeholder="Give Details of circumstances leading to loss"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Discovery Date</span>
+                                    <input name="discoveryDate" type="date" placeholder="1/1/2020"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Discovered By:</span>
+                                    <input name="discoverer" placeholder="Loss was discovered by?"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Date Notified:</span>
+                                    <input name="policeDate" type="date" placeholder="Date Notified to police?"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Police Station Address:</span>
+                                    <input name="PoliceAddress" placeholder="Police Station Address"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="suspicions">Do you have any suspicion as to parties implicated</span>
+                                    <label class="switch">
+                                        <input id="suspicion" name="suspicion" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Suspicion Details</span>
+                                    <textarea name="suspicionDetails" placeholder="Give Details of suspicion"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isInsure">
+                                        Is the property claimed for insured with any other company or
+                                        underwriters against Burglary, Housebreaking, Larceny,
+                                        All Risks or Fire?
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isInsured" name="isInsured" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details</span>
+                                    <textarea name="suspicionDetails" placeholder="Give Details of suspicion"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isBurg">
+                                        Have you previously suffered a loss by Burglary, Housebreaking,
+                                        or Theft?
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isBurgled" name="isBurgled" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details</span>
+                                    <textarea name="burgDetails" placeholder="Give full particulars"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="hasClaim">
+                                        Have you ever made a claim under a Burglary or All Risks Policy?
+                                    </span>
+                                    <label class="switch">
+                                        <input id="hasClaimed" name="hasClaimed" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details</span>
+                                    <textarea name="hasClaimDetails" placeholder="Give full particulars"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                            </div>
+                            <div class="row burglary">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Insured</span>
+                                    <input name="insured" placeholder="Insured"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Policy No.</span>
+                                    <input name="policyno" placeholder="Policy No"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Discovery Date</span>
+                                    <input name="discoveryDate" type="date" placeholder="1/1/2020"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Discovered By:</span>
+                                    <input name="discoverer" placeholder="Loss was discovered by?"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+
+                                <div class="input-group">
+                                    <span class="input-group-addon">Address (Loss)</span>
+                                    <input name="discoveryDate" type="text" placeholder="Address where loss occured"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Premise Description:</span>
+                                    <textarea name="discoverer" placeholder="Description of premise where loss occured?"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Burgled Spot</span>
+                                    <textarea name="discoveryDate" placeholder="State the part of the premise from which property was stolen"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Discovered By:</span>
+                                    <input name="discoverer" placeholder="Loss was discovered by?"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isInsure">
+                                        Are you the sole owner of the stolen or damaged property described overleaf?
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isSoleOwn" name="isSoleOwner" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isInsure">
+                                        Is property occupied during Loss
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isPropOccupy" name="isPropOccupied" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">How Long:</span>
+                                    <input name="occupyPeriod" placeholder="For how long was the property occupied?"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isLent">
+                                        Is property let,sublet or lent at the time of Loss
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isSublet" name="isSublet" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Entrance Details:</span>
+                                    <textarea name="entranceDetails" placeholder="How was entry to the premises effected? Give full details?"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Police Notification Date:</span>
+                                    <input name="policeNotificationDate" type="date" placeholder="1-1-2021"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Police Station Details:</span>
+                                    <textarea name="entranceDetails" placeholder="Name and Address of Police Station?"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon" id="isBurgSus">
+                                        Have you any suspicions as to parties implicated
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isBurgSus" name="isBurgSus" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details:</span>
+                                    <textarea name="suspDetails" placeholder="Details"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Loss Value:</span>
+                                    <input name="lossVale" placeholder="Total Value of whole content at loss time"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        Is the property claimed for insured with any other Company or with
+                                        Underwriters against Burglary, Housebreaking, Larceny, or All Risks
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isInsredWithOthers" name="isInsredWithOthers" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details:</span>
+                                    <textarea name="suspDetails" placeholder="Give full particulars including name of insurers and Policy number"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        Have you previously suffered a loss by Burglary, Housebreaking or
+                                        theft
+                                    </span>
+                                    <label class="switch">
+                                        <input id="isprevBurg" name="isprevBurg" type="checkbox">
+                                        <span class="slider round"></span>
+                                    </label>
+                                </div>
+                                <div class="input-group">
+                                    <span class="input-group-addon">Details:</span>
+                                    <textarea name="prevBurgDetails" placeholder="Give full details"
+                                              class="required form-control mb-2 mr-sm-2"></textarea>
+                                </div>
+                            </div>
+                            <div class="row fire">
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="companyType">Company</span>
+                                        <label class="switch">
+                                            <input id="companyForm" type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="input-group ccmp">
+                                        <span class="input-group-addon">Title</span>
+                                        <select class="form-control" id="titled">
+                                            <option value="">- select -</option>
+                                            <option value="Mr">Mr</option>
+                                            <option value="Mrs">Mrs</option>
+                                            <option value="Dr">Dr</option>
+                                            <option value="Prof">Prof</option>
+                                            <option value="Engr">Engr</option>
+                                            <option value="Arch">Arch</option>
+                                            <option value="Rev">Rev</option>
+                                            <option value="Rev Can">Rev Can</option>
+                                            <option value="Pastor">Pastor</option>
+                                            <option value="HRH">HRH</option>
+                                            <option value="HRM">HRM</option>
+                                            <option value="Amb">Amb</option>
+                                            <option value="Hon">Hon</option>
+                                            <option value="Rt Hon">Rt Hon</option>
+                                            <option value="Sen">Sen</option>
+                                            <option value="Justice">Justice</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon lastname">LastName</span>
+                                        <input id="lastname" name="lastname" placeholder="Company/Last Name"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group ccmp">
+                                        <span class="input-group-addon">FirstName</span>
+                                        <input id="firstname" name="firstname" placeholder="FirstName"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Address(Office)</span>
+                                        <input id="OfficeAddress" name="OfficeAddress" placeholder="Address (Office)"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Address(Home)</span>
+                                        <input id="HomeAddress" name="OfficeAddress" placeholder="Address (Home)"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Tel:</span>
+                                        <input id="phone" name="phone" placeholder="Telephone/Mobile No."
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Email(Office)</span>
+                                        <input type="email" id="OfficeEmail" name="OfficeEmail" pattern="[^@("@")]+@("@")[^@("@")]+\.[a-zA-Z]{2,6}" placeholder="Email (Office)"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                </div>
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Nationality</span>
+                                        <input id="nationality" name="nationality" placeholder="Nationality"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Religion</span>
+                                        <input id="religion" name="religion" placeholder="Religion"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">DOB/Incorporation</span>
+                                        <input id="dob" name="dob" type="date"
+                                               class=" form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">ID/Reg No.</span>
+                                        <input id="identityno" name="identityno" placeholder="ID/Reg No"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">BVN.</span>
+                                        <input id="bvn" name="bvn" placeholder="BVN"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <h3>Product Information</h3>
+                <section>
+                    <div class="panel panel-green">
+                        <div class="panel-heading">Product Information</div>
+                        <div class="panel-body">
+                            <div class="row burglary">
+                                <div class="col-xs-6">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="opstype">Debit Note</span>
+                                        <label class="switch">
+                                            <input id="businessFormIndex" type="checkbox" disabled>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Type</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="directType">
+                                            <option value="DIRECT">DIRECT</option>
+                                            <option value="INDIRECT">INDIRECT</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Cover Type</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="productname"></select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Sub Risk</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="subrisk"></select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Sum Insured</span>
+                                        <input id="sumInsured" name="identityno" type="number"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Currency</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="currency"></select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Override System Premium Rate </span>
+                                        <input id="overridePremiumRate" type="checkbox"
+                                               class="chkbox" />
+                                    </div>
+                                    <div class="input-group" id="sysPremRate">
+                                        <span class="input-group-addon">Premium Rate (%)</span>
+                                        <input id="percentage" name="percentage" type="number"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Premium</span>
+                                        <input id="premium" name="premium" type="number" disabled
+                                               class=" required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group hidden">
+                                        <span class="input-group-addon">Override System Commission Rate </span>
+                                        <input id="overrideCommissionRate" disabled type="checkbox"
+                                               class="chkbox" />
+                                    </div>
+                                    <div class="input-group" id="sysCommRate">
+                                        <span class="input-group-addon">Commission Rate (%)</span>
+                                        <input id="commissionRate" name="premium" type="number"
+                                               class=" required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Marketer</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="marketer"></select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Agent / Broker</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="broker">
+                                            <option value="">- Select -</option>
+                                        </select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Branch</span>
+                                        <select class="required form-control mb-2 mr-sm-2" id="branch"></select>
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Start Date.</span>
+                                        <input id="startdate" name="startdate" type="date"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">End Date</span>
+                                        <input id="enddate" name="enddate" type="date"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Other Details</span>
+                                        <textarea id="otherdetails" style="height:220px;" name="otherdetails" placeholder="Other Details"
+                                                  class="required form-control mb-2 mr-sm-2"></textarea>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-6" id="motors">
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Reg No.</span>
+                                        <input id="regno" name="regno" placeholder="Reg No"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Make</span>
+                                        <input id="make" name="make" placeholder="vehicle make"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Color</span>
+                                        <input id="color" name="color" placeholder="Color"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Model</span>
+                                        <input id="model" name="model" placeholder="Model"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Engine No.</span>
+                                        <input id="engno" name="engno" placeholder="Engine No"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Chasis No.</span>
+                                        <input id="chasisno" name="chasisno" placeholder="Chasis No"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Seat Capacity</span>
+                                        <input id="seatcapacity" type="number" name="seatcapacity" placeholder="Seat Capacity"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+                                    <div class="input-group">
+                                        <span class="input-group-addon">Tracking Fee</span>
+                                        <input id="trackingFee" value="0" type="number" name="trackingFee"
+                                               class="required form-control mb-2 mr-sm-2" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="row allrisk">
+                                <div class="input-group">
+                                    <span class="input-group-addon">Insured</span>
+                                    <input name="insured" placeholder="Insured"
+                                           class="required form-control mb-2 mr-sm-2" />
+                                </div>
+                            </div>
+                            </div>
+
+                        </div>
+                </section>
+                <h3>Documents Upload</h3>
+                <section>
+                    <div class="panel panel-green">
+                        <div class="panel-heading">Documents Upload</div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <input type="file" accept="image/*,application/pdf" multiple id="gallery-photo-add">
+                                    <div class="gallery"></div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </section>
+                <h3>Finish</h3>
+                <section>
+                    <div class="row">
+                        <div class="col-xs-12" id="summaryLoader">
+                            <div class="panel panel-green">
+                                <div class="panel-heading">Summary</div>
+                                <div class="panel-body">
+                                    <div class="row">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="acceptTerms" name="acceptTerms" type="checkbox" class="required" /> 
+                    <label for="acceptTerms">
+                        I do solemnly declare that the Property described on the other side belonging to me/us, and insured under the said Policy, was stolen or damaged, and
+                        that the amounts severally stated represent the sum. I/We am/are entitled to claim, in terms of the Policy.<br />
+                        I also declare that no other person has an interest in the said Property, whether as Owner, Mortgagee, Trustee or otherwise that is not otherwise insured
+                        against All Risks, Burglary, Housebreaking or Theft with this or any other Office or with Underwriters, except as herein mentioned, that I/We have not
+                        withheld any material information and that all the statements on this form are to the best of my knowledge and belief correct.
+                    </label>
+                </section>
+            </div>
+        </form>
+    </section>
+</div>
+
+    @section Scripts{
+        <script src="~/js/claims.js"></script>
+    }

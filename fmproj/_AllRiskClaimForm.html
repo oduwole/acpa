@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--<link rel="stylesheet" href="../Styles/bootstrap/dist/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="../Styles/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../Styles/site.css">
+    <title>All Risk Claim Form</title>
+    <style>
+        
+        .risk_container{
+            margin:30px 100px 50px 170px;
+            width: 70%;
+            border: 4px solid rgb(155, 145, 127);
+        }
+        
+         ol li > label{
+            margin-left: 30px;
+        }
+        ol li > input{
+            margin-left: 30px;
+            width: 50%;
+        }
+        @media screen and (max-width: 730px) {
+            .risk_container {
+                margin-left: 70px;
+            }
+        }
+        @media screen and (max-width: 902px) {
+           .amt{
+               margin-top: 5px;
+           }
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container risk_container">
+        <div class="risk_inner">
+            <form id="html-2-pdfwrapper">
+                <div class="about">
+                    <!--
+                    <p>
+                        I do solemnly declare that the Property described on the other side belonging 
+                        to me/us, and insured under the said Policy, was stolen or damaged, and 
+                        that the amounts severally stated represent the sum. I/We am/are entitled to claim,
+                        in terms of the Policy. 
+                    </p>
+                    <p>
+                        I also declare that no other person has an interest in the said Property, whether as Owner, 
+                        Mortgagee, Trustee or otherwise that is not otherwise insured 
+                        against All Risks, Burglary, Housebreaking or Theft with this or any other Office or with
+                        Underwriters, except as herein mentioned, that I/We have not 
+                        withheld any material information and that all the statements on this form are to the best
+                        of my knowledge and belief correct.
+                    </p>
+                -->
+                    <p>The issue of this form is NOT an admission of liability on the part of
+                    the Company. Please answer all questions fully and return form without delay
+                    to<br>
+                    <span style="font-weight: 1000;">
+                        <bold>ALLIANZ NIGERIA INSURANCE PLC</bold>
+                    </span>
+                    </p> 
+                    <hr>
+                    <p class="mt-4">
+                            <label for="insured">Insured:</label>
+                            <input  id="insured" name="insured" class="insuredinput">
+                    </p>
+                </div>
+                <div class="insurediv mt-3">
+                    <div>
+                        <ol class="insureinputlist">
+                            <li>
+                                <label for="policynumber">Policy Number</label>
+                                <input name="policynumber" id="policynumber">
+                            </li>
+                            <li>
+                                <ol style="list-style: lower-alpha;">
+                                    <li >
+                                        <label for="lossdatetime" name="lossdatetime">Date and time when the loss occurred</label>
+                                        <input type="datetime-local" id="lossdatetime" name="lossdatetime">
+                                    </li>
+                                    <li>
+                                        <label for="lossdetails">Give details of circumstances leading to the loss</label>
+                                        <input  name="lossdetails" id="lossdetails">
+                                    </li>
+                                    <li>
+                                        <label for="lossState">State where loss occurred</label>
+                                        <input id="lossState" name="lossState">
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <label for="lossdatediscovery">Date of discovery of loss and by whom it was discovered.</label>
+                                <input type="datetime-local" id="lossdatediscovery" name="lossdatediscovery">
+                            </li>
+                            <li>
+                                <ol style="list-style: lower-alpha;">
+                                    <li>
+                                        <label for="datenotified" >Date notified to Police</label>
+                                        <input id="datenotified" name="datenotified" type="datetime-local"  >
+                                    </li>
+                                    <li>
+                                        <label for="polistationaddress">Name and address of the Police Station</label>
+                                        <input type="text" name="polistationaddress" id="polistationaddress">
+                                    </li>
+                                </ol>
+                            </li>
+                            <li>
+                                <label for="suspicion">Do you have any suspicion as to parties implicated? If so, give full particulars.</label>
+                                <input name="suspicion" id="suspicion" >
+                            </li>
+                            <li>
+                                <label for="claims">
+                                    Is the property claimed for insured with any other company or 
+                                    underwriters against Burglary, Housebreaking, Larceny, 
+                                    All Risks or Fire?
+                                    If so, give full particulars, including name of insurers and policy numbers
+                                </label>
+                                <input name="claims" id="claims">
+                            </li>
+                            <li>
+                                <label for="sufferdloss" >
+                                    Have you previously suffered a loss by Burglary, Housebreaking, or Theft?
+                                    If so, give full particulars.
+                                </label>
+                                <input name="sufferdloss"id="sufferdloss">
+                            </li>
+                            <li>
+                                <label for="claimburglary">
+                                    Have you ever made a claim under a Burglary or All Risks Policy? 
+                                    If so give particulars.
+                                </label>
+                                <input type="text" name="claimburglary" id="claimburglary">
+                            </li>
+                        </ol>
+                </div>
+                <div class="mt-4">
+                        <p>
+                            <input type="checkbox" name="do_accept_or_not" id="do_accept_or_not"  value="true">
+                            I do solemnly declare that the Property described on the other side belonging 
+                            to me/us, and insured under the said Policy, was stolen or damaged, and 
+                            that the amounts severally stated represent the sum. I/We am/are entitled to claim,
+                            in terms of the Policy. 
+                        </p>
+                        <p>
+                            I also declare that no other person has an interest in the said Property, whether as Owner, 
+                            Mortgagee, Trustee or otherwise that is not otherwise insured 
+                            against All Risks, Burglary, Housebreaking or Theft with this or any other Office or with
+                            Underwriters, except as herein mentioned, that I/We have not 
+                            withheld any material information and that all the statements on this form are to the best
+                            of my knowledge and belief correct.
+                        </p>
+                </div> 
+                    <div style="margin-top: 80px;">
+                        <label for="dated">Dated </label>
+                        <input type="datetime-local" name="dated" id="dated">
+                        <label for="claimantsignature">Signature of Claimant</label>
+                        <input type="file" name="claimantsignature" id="claimantsignature"><br>
+                        <label for="address">Address</label>
+                        <input name="address" id="address"class="nonoutlineinput"style="width: 80%;" ><br>
+                        <label for="witness">Witness</label>
+                        <input name="witness" id="witness"class="nonoutlineinput"style="width: 80%;" >
+                    </div>
+                    <div class="mt-4">
+                        <h6 >Instructions Regarding Claims</h6>
+                        <p class="ml-3">
+                            Discovery of Loss: The Insured must promptly take all practicable steps, including the giving
+                             of immediate notice to the Police, for discovering the guilty 
+                            party or parties, if any and for tracing and recovering the property lost. Any suspicions
+                             as to parties implicated should be communicated to the company.
+                        </p>
+                    </div>
+                    <hr>
+                    <div>
+                        <h6>Statement of Claim</h6>
+                        <p class="ml-3">
+                            N. B. - The amount to be claimed on any article is limited to the actual intrinsic value at the
+                             time of the loss. The extent of damage should be stated as fully aspossible.
+                        </p>
+                    </div>
+                </div> 
+                <div style="margin-top: 30px;" class="addition" >
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="propertydescription">Property Description</label>
+                            <textarea name="propertydescription" id="propertydescription" class="mt-4" style="height: 120px;" ></textarea>
+                        </div>
+                       <div class="col-6">
+                           <label for="beholder">State to whom Property Belonged </label>
+                           <textarea name="beholder" id="beholder" class="mt-4" style="height: 120px;"></textarea>
+                       </div>
+                    </div>
+                    <div >
+                        <label for="boughtdate">Where and When Bought</label>
+                        <input type="datetime-local" name="boughtdate" id="boughtdate"></input>
+                       <label for="costprice">Cost Price </label>
+                       <input name="costprice" id="costprice"><br>
+                       <label for="amountclaimed">Amount Claimed </label>
+                       <input class="amt" name="amountclaimed" id="amountclaimed">
+                   </div>
+                </div>
+          </form>
+          <div class="mt-4" style="text-align: center;">
+              <button id="submitinfo" name="submitinfo" type="submit" class="btn btn-sm btn-primary">Submit</button>
+          </div>
+        </div>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Send Filled Content</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group modsp">
+                        <span>Receivers' Email</span><input type="email" placeholder="email addresss" class="form-control" id="remail" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="sendmail()" id="sendemail">Send</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/html2canvas.js"></script>
+    <script src="../Scripts/jspdf.debug.js"></script>
+    <script src="../Scripts/jspdf.customfonts.min.js"></script>
+    <script src="../Scripts/jspdf.plugin.autotable.js"></script>
+    <script src="../Scripts/app.js"></script>
+</body>
+</html>

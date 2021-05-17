@@ -1,0 +1,91 @@
+﻿@font-face {
+    font-family: 'icomoon';
+    src: url('icomoon.eot?nst55u');
+    src: url('icomoon.eot?nst55u#iefix') format('embedded-opentype'), url('icomoon.ttf?nst55u') format('truetype'), url('icomoon.woff?nst55u') format('woff'), url('icomoon.svg?nst55u#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    font-size: 85px;
+    line-height: 1;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-plant-all-risk:before {
+    content: "\e900";
+}
+
+.icon-marine-hull:before {
+    content: "\e901";
+}
+
+.icon-professional-idemnity:before {
+    content: "\e902";
+}
+
+.icon-public-liability:before {
+    content: "\e903";
+}
+
+.icon-personal-accident:before {
+    content: "\e904";
+}
+
+.icon-material-damage:before {
+    content: "\e905";
+}
+
+.icon-home-insurance:before {
+    content: "\e906";
+}
+
+.icon-group-personal:before {
+    content: "\e907";
+}
+
+.icon-goods-in-transit:before {
+    content: "\e908";
+}
+
+.icon-fire-and-special-perils:before {
+    content: "\e909";
+}
+
+.icon-all-risk:before {
+    content: "\e90a";
+}
+
+.icon-electronic-equipment:before {
+    content: "\e90b";
+}
+
+.icon-death:before {
+    content: "\e90c";
+}
+
+.icon-marine-cargo:before {
+    content: "\e90d";
+}
+
+.icon-fiedlity-guarantee:before {
+    content: "\e90e";
+}
+
+.icon-machinery:before {
+    content: "\e90f";
+}
+
+.icon-burg:before {
+    content: "\e910";
+}

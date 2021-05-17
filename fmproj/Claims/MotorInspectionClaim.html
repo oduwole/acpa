@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motor Claim Inspection Form</title>
+    <link rel="stylesheet" href="../Styles/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <link rel="stylesheet" href="../css/nprogress.css" />
+    <link rel="stylesheet" href="../css/toastr.min.css" />
+    <!--<link rel="stylesheet" href="../Styles/site.css">-->
+    <link rel="stylesheet" href="../font-style.css" />
+    <style>
+        
+        .risk_container{
+            margin:30px 100px 50px 170px;
+            width: 70%;
+            border: 4px solid rgb(155, 145, 127);
+        }
+        
+         ol li > label{
+            margin-left: 30px;
+        }
+        ol li > input{
+            margin-left: 30px;
+            width: 50%;
+        }
+        @media screen and (max-width: 730px) {
+            .risk_container {
+                margin-left: 70px;
+            }
+        }
+        @media screen and (max-width: 902px) {
+           .amt{
+               margin-top: 5px;
+           }
+        }
+      
+    </style>
+    <style>
+        .insureinputlist input[type=checkbox] {
+            width: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container risk_container" id="html-2-pdfwrapper">
+        <div class="risk_inner">
+            <form>
+                <img style="width:260px;" alt="" src="data:image/html;base64, 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" />
+                <div class="about">
+                    <p>
+                        Please fill in the textbox provided to indicate damaged part(s) of the vehicle. 
+                        Kindly specify the affected areas of the vehicle and take visible pictures of same! 
+                        Note that in cases where there is a severe accident and the internal parts of the 
+                        vehicle e.g. mechanical or electrical are affected, please specify same in your remarks
+                    </p>
+                    <hr>
+                </div>
+                <div class="insurediv mt-3">
+                    <h6>Immediate Notice Must Be Given To The Police</h6>
+                    <div>
+                        <ol class="insureinputlist">
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isbumper">Bumper </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="bumper" id="bumper">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="bumper">Fender </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isfender" id="isfender">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isbumper">Wheels </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isbumper" id="isbumper">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="iswindscreen">Wind Screen </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="iswindscreen" id="iswindscreen">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isrearview">Rear View </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isrearview" id="isrearview">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="issidemirror">Side Mirror </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="issidemirror" id="issidemirror">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isroof">Roof </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isroof" id="isroof">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isexhaust">Exhaust </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input style="width: 30px;" type="checkbox" name="isexhaust" id="isexhaust">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isexhaust">Exhaust </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input style="width: 30px;" type="checkbox" name="isexhaust" id="isexhaust">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isexhaust">Exhaust </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input style="width: 30px;" type="checkbox" name="isexhaust" id="isexhaust">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="islight">Light(s) </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="islight" id="islight">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isdoors">Door(s) </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input style="width: 30px;" type="checkbox" name="isdoors" id="isdoors">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isbody">Body </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isbody" id="isbody">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isbonnet">Bonnet </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isbonnet" id="isbonnet">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="isboot">Boot </label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="isboot" id="isboot">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="ismechdamage">Mech. Damage</label>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input  type="checkbox" name="ismechdamage" id="ismechdamage">
+                                </div>
+                            </li>
+                            <li class="row">
+                                <div class="col-sm-2">
+                                    <label for="ismechdamage">Repair</label>
+                                </div>
+                                <div class="col-sm-10">
+                                    <textarea style="width: 100%;"  type="checkbox" name="ismechdamage" id="ismechdamage"></textarea>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="mt-4 row">
+                        <div class="col-sm-6">
+                            <label for="rrosignature">RRO Signature</label>
+                            <input type="file" name="rrosignature" id="file1" />
+                            <img id="blah1" src="#" alt="your image" /><br>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="prosignaturedate">Date</label>
+                            <input type="date" name="prosignaturedate" id="prosignaturedate" >
+                        </div>
+                    </div>
+                    <div class="mt-2 row">
+                        <div class="col-sm-6">
+                            <label for="insuredsignature">Insured Signature</label>
+                            <input type="file" name="insuredprosignature" id="insuredprosignature" />
+                            <img id="blah" src="#" alt="your image" /><br>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="insuredsignaturedate">Date</label>
+                            <input type="date" name="insuredsignaturedate" id="insuredsignaturedate" >
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+        
+    <div class="mt-4" style="text-align: center;">
+        <button id="submitinfo" name="submitinfo" type="button" class="btn btn-sm btn-primary">Submit</button>
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Send Filled Content</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group modsp">
+                        <span>Receivers' Email</span><input type="email" placeholder="email addresss" class="form-control" id="remail" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="sendmail()" id="sendemail">Send</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    
+    <script src="../Scripts/jquery-3.3.1.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script src="../Scripts/html2canvas.js"></script>
+    <script src="../Scripts/jspdf.debug.js"></script>
+    <!--<script src="../Scripts/jspdf.customfonts.min.js"></script>-->
+    <script src="../Scripts/jspdf.plugin.autotable.js"></script>
+    <script src="../Scripts/nprogress.js"></script>
+    <script src="../Scripts/toastr.min.js"></script>
+    <script src="../Scripts/app.js"></script>
+</body>
+</html>

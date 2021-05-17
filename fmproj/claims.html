@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Allianz CPA</title>
+    <link rel="stylesheet" href="./lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/site.css" />
+    <link rel="stylesheet" href="./css/jquery.step.css" />
+    <!--<link rel="stylesheet" href="./font/iconmoon.css" />-->
+    <link rel="stylesheet" href="./font-style.css" />
+    <!--<link rel="stylesheet" href="https://i.icomoon.io/public/temp/ae2cd692fa/UntitledProject/style.css">-->
+
+    
+<style type="text/css">
+
+h5{
+    height: 120px;
+}
+    .gallery {
+        margin-top: 4%;
+        margin-left: 3%;
+        margin-right: 3%;
+    }
+
+        .gallery img {
+            margin-left: 2%;
+            margin-bottom: 2%;
+            margin-right: 2%;
+            margin-top: 2%;
+        }
+
+    img {
+        max-width: 180px;
+    }
+
+    .checkbox {
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        background-color: #eee;
+    }
+
+    .chkbox {
+        top: 0;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        background-color: #eee;
+    }
+
+    .checkbox:hover {
+        background-color: #ccc;
+    }
+
+    .input-group-addon {
+        background-color: #2184be !important;
+        color: #fff !important;
+    }
+
+    .input-group {
+        margin-bottom: 10px;
+    }
+
+    .premium {
+        /* background-color:#d9534f;*/
+    }
+
+    .minHeight {
+        min-height: 1150px;
+    }
+
+    .wizard .content {
+        /*min-height: 1150px;*/
+    }
+
+        .wizard .content > .body {
+            width: 100%;
+            height: auto;
+            padding: 15px;
+            /*position: relative;*/
+        }
+
+    .panel {
+        min-height: 550px;
+    }
+
+    .panel-green {
+        border-color: #5cb85c;
+    }
+
+        .panel-green > .panel-heading {
+            border-color: #5cb85c;
+            color: white;
+            background-color: #5cb85c;
+        }
+
+        .panel-green > a {
+            color: #5cb85c;
+        }
+
+            .panel-green > a:hover {
+                color: #3d8b3d;
+            }
+
+    .panel-red {
+        border-color: #d9534f;
+    }
+
+        .panel-red > .panel-heading {
+            border-color: #d9534f;
+            color: white;
+            background-color: #d9534f;
+        }
+
+        .panel-red > a {
+            color: #d9534f;
+        }
+
+            .panel-red > a:hover {
+                color: #b52b27;
+            }
+
+    .panel-yellow {
+        border-color: #f0ad4e;
+    }
+
+        .panel-yellow > .panel-heading {
+            border-color: #f0ad4e;
+            color: white;
+            background-color: #f0ad4e;
+        }
+
+        .panel-yellow > a {
+            color: #f0ad4e;
+        }
+
+            .panel-yellow > a:hover {
+                color: #df8a13;
+            }
+
+    .panel-blue {
+        border-color: #0775ed;
+    }
+
+        .panel-blue > .panel-heading {
+            border-color: #0775ed;
+            color: white;
+            background-color: #0775ed;
+        }
+
+        .panel-blue > a {
+            color: #0775ed;
+        }
+
+    .panel-green > a:hover {
+        color: #2184be;
+    }
+</style>
+
+<style>
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #ccc;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            -webkit-transition: .4s;
+            transition: .4s;
+        }
+
+    input:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input:focus + .slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked + .slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    /* Rounded sliders */
+    .slider.round {
+        border-radius: 34px;
+    }
+
+        .slider.round:before {
+            border-radius: 50%;
+        }
+</style>
+</head>
+<body>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <span class="icon-allianz-logo" style="font-size:40px;"></span>
+            <div class="page">
+                <section class="content">
+                    <form id="example-form" action="#">
+                        <div>
+            
+                            <h3>Select Product</h3>
+                            <section>
+                                <div class="row">
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="fa fa-5x icon-all-risk"></i>-->
+                                            <span class="icon-all-risk"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <!--<img class="card-img-top" src="./images/agric.jpg" alt="Card image cap" />-->
+                                            <div class="card-body">
+                                                <h5 class="card-title">All Risk</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="allrisk" value="AllRiskClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-burg"></i>-->
+                                            <span class="icon-burg"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <!--<img class="card-img-top" src="./images/burglary.jpg" style="width:286px; height:120px;" alt="Burglary" />-->
+                                            <div class="card-body">
+                                                <h5 class="card-title">Burglary</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="burglary" value="BurglaryClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-death"></i>-->
+                                            <span class="icon-death"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Death</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="death" value="DeathClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-electronic-equipment"></i>-->
+                                            <span class="icon-electronic-equipment"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Elect. Equip.</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="electequip" value="ElectronicEquipmentClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-fiedlity-guarantee"></i>-->
+                                            <span class="icon-fiedlity-guarantee"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Fidelity Guar.</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="fidelity" value="FidelityGuaranteeClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-fire-and-special-perils"></i>-->
+                                            <span class="icon-fire-and-special-perils"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Fire & SP</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="fire" value="FireandPerilsClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-goods-in-transit"></i>-->
+                                            <span class="icon-goods-in-transit"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">GIT</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="git" value="GoodsInTransitClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-group-personal"></i>-->
+                                            <span class="icon-group-personal"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Group Personal Acc.</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="gpa" value="GroupPersonalAccidentClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-home-insurance"></i>-->
+                                            <span class="icon-home-insurance"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Home</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="home" value="HomeClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-machinery"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Machinery Brakedown</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="machinery" value="MachineryBreakdownClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-marine-cargo"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Marine Cargo</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="marinecargo" value="MarineCargoClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <!--<i class="icon-marine-hull"></i>-->
+                                            <span class="icon-marine-hull"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Marine Hull</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="marinehull" value="MarineHullClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-material-damage"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Material Damage</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="material" value="MaterialDamageClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+            
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-motor" style="font-size:80px; margin-top: 50px;"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Motor</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="motor" value="MotorClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-motor-inspection" style="font-size:80px; margin-top: 50px;"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Motor Inspection</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="motorinsp" value="MotorInspectionClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-personal-accident"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Personal Accident</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="personalAcc" value="PersonalAccidentClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-plant-all-risk"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Plant All Risk</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="plantAR" value="PlantAllRiskClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-professional-idemnity"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Professional Indemnity</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="profInd" value="ProfessionalIndemnityClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <div class="card" style="width: 10rem;">
+                                            <span class="icon-public-liability"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></span>
+                                            <div class="card-body">
+                                                <h5 class="card-title">Public Liability</h5>
+                                                <p class="card-text"></p>
+                                                <input type="radio" name="radios[]" id="pubLiab" value="PublicLiabilityClaim" class="checkbox" />
+                                            </div>
+            
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </main>
+    </div>
+    <!--
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - AllianzCPA - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    -->
+    <script src="./lib/jquery/dist/jquery.min.js"></script>
+    <script src="./lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/site.js" asp-append-version="true"></script>
+    <script src="./lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="./lib/jquery.steps.min.js"></script>
+    <script src="./js/claims.js"></script>
+</body>
+</html>
