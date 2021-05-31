@@ -189,7 +189,7 @@ namespace AllianzCPA.Controllers
             using (var client = new SmtpClient()
             {
                 Port = 587, //mailConfig.port, //
-                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "Allianz1234"), //mailConfig.username, mailConfig.password
+                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "N@k*&nfcn%#)))!mnqpt"), //mailConfig.username, mailConfig.password
                                                                                                          
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 EnableSsl = true, //mailConfig.isSSL,// = 
@@ -228,7 +228,7 @@ namespace AllianzCPA.Controllers
             using (var client = new SmtpClient()
             {
                 Port = 587, //mailConfig.port, //
-                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "Allianz1234"), //mailConfig.username, mailConfig.password
+                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "N@k*&nfcn%#)))!mnqpt"), //mailConfig.username, mailConfig.password
                                                                                                           
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 EnableSsl = true, //mailConfig.isSSL,// = 
@@ -266,7 +266,7 @@ namespace AllianzCPA.Controllers
             using (var client = new SmtpClient()
             {
                 Port = 587, //mailConfig.port, //
-                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "Allianz1234"), //mailConfig.username, mailConfig.password
+                Credentials = new System.Net.NetworkCredential("notification@allianz.ng", "N@k*&nfcn%#)))!mnqpt"), //mailConfig.username, mailConfig.password
                                                                                                          
                 DeliveryMethod = SmtpDeliveryMethod.Network,
                 EnableSsl = true, //mailConfig.isSSL,// = 
